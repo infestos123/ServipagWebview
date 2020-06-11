@@ -1,0 +1,7 @@
+{
+  "name": "servipagWebview",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
