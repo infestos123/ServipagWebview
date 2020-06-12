@@ -4,19 +4,19 @@
     <ion-row>
       <ion-col size="10" offset="1">
 
-        <div class="ion-align-self-center">
-
+        <div class="ion-align-self-center" style="margin-top: 4rem;">
           <ion-input required type="text" class="input-formulario" [(ngModel)]="user" placeholder="Ingrese su rut">
           </ion-input>
         </div>
-        <div style="margin-bottom:1rem">
 
+        <div style="margin-bottom:1rem;margin-top: 2rem;">
           <ion-input required type="password" class="input-formulario" [(ngModel)]="password" placeholder="Contraseña">
           </ion-input>
         </div>
+
         <div style="margin-left: 1.1rem;">
           <ion-checkbox></ion-checkbox>
-          <ion-label style="margin-left: 1rem;font-size:small; vertical-align: 50%;">Recordar contraseña</ion-label>
+          <ion-label class="colorTittle" style="margin-left: 1rem;font-size:small; vertical-align: 50%;">Recordar contraseña</ion-label>
         </div>
 
         <div>
@@ -24,7 +24,7 @@
         </div>
 
         <div>
-          <ion-button expand="block" color="medium" (click)="signIn()">Ingresar</ion-button>
+          <ion-button expand="block" color="primary" (click)="signIn()">Ingresar</ion-button>
         </div>
 
 

@@ -72,12 +72,14 @@
   font-size: small;
   float: right;
   padding: 1rem;
+  font-weight: bold;
 }
 .labelRecuperarRight2 {
   font-size: small;
   float: right;
   padding: 1rem;
   margin-top: 2rem;
+  font-weight: bold;
 }
 
 .input-formulario {
@@ -98,4 +100,9 @@
 
 .main-content{
   margin-top: 2rem;
+}
+
+.colorTittle {
+  color: white;
+  font-weight: bold;
 }
