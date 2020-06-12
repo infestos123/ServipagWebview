@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
 
   signIn() {
     if (this.user === 'daniel' && this.password === '123') {
-      this.router.navigate(['/contact']);
+      this.router.navigate(['/home']);
     }
   }
 }

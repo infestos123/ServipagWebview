@@ -31,3 +31,35 @@
   width: 10rem;
 }
 
+.button-home {
+  height: 6rem;
+  width: 6rem;
+  --border-radius: 5rem;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top:5rem;
+}
+
+.labels{
+  display: block;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.positionTittle {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.colorTittle {
+  color: white;
+  -webkit-text-stroke: 1px #848484; 
+}
