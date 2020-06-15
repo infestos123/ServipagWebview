@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeadersComponent } from '../@core/components/common/headers/headers.component';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
 @NgModule({
   declarations: [AppComponent, HeadersComponent],
   entryComponents: [],
@@ -17,6 +20,8 @@ import { HeadersComponent } from '../@core/components/common/headers/headers.com
   providers: [
     StatusBar,
     SplashScreen,
+    InAppBrowser,
+    CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

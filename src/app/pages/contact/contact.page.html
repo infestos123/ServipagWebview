@@ -5,7 +5,7 @@
 
 
   <ion-card style="opacity: 0.9;margin: 2rem;">  
-    <ion-card-content>
+    <ion-card-content (click)="openUrlFacebook()">
       <ion-icon href="https://www.w3schools.com" name="logo-facebook" style="font-size: 3rem;position: absolute;"></ion-icon>
       <ion-label style="margin-left: 4rem;">Facebook</ion-label>
       <br>
@@ -14,7 +14,7 @@
   </ion-card>
 
   <ion-card style="opacity: 0.9;margin: 2rem;">  
-    <ion-card-content>
+    <ion-card-content (click)="openUrlTwitter()">
       <ion-icon name="logo-twitter" style="font-size: 3rem;position: absolute;"></ion-icon>
       <ion-label style="margin-left: 4rem;">Twitter</ion-label>
       <br>
@@ -24,7 +24,7 @@
   </ion-card>
 
   <ion-card style="opacity: 0.9;margin: 2rem;">  
-    <ion-card-content>
+    <ion-card-content (click)="callNum()">
       <ion-icon name="call-outline" style="font-size: 3rem;position: absolute;"></ion-icon>
       <ion-label style="margin-left: 4rem;">*PAGO</ion-label>
       <br>
