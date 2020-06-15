@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { Plugins } from '@capacitor/core';
+
 
 @Component({
   selector: 'app-home',
@@ -12,5 +14,9 @@ export class HomePage {
 
   goToContact() {
     this.router.navigate(['/contact']);
+  }
+
+  openUrlServipag(){
+    Plugins.Browser.open({ url: 'https://www.servipag.com/mobile', windowName: '_self' });
   }
 }

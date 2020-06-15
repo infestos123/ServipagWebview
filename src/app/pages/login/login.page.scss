@@ -72,14 +72,14 @@
   font-size: small;
   float: right;
   padding: 1rem;
-  font-weight: bold;
+  // font-weight: bold;
 }
 .labelRecuperarRight2 {
   font-size: small;
   float: right;
   padding: 1rem;
   margin-top: 2rem;
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 .input-formulario {
@@ -94,7 +94,7 @@
 }
 
 .label-link {
-  color: white;
+  // color: white;
   text-decoration: underline;
 }
 
@@ -103,6 +103,21 @@
 }
 
 .colorTittle {
-  color: white;
-  font-weight: bold;
+  // color: white;
+  // font-weight: bold;
+}
+
+.label-titulo1 {
+  text-align: center;
+  margin-top: 2rem;
+  color: #3880ff;
+  font-weight: 500;
+  font-size: smaller;
+}
+.label-titulo2 {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  color: #777a80;
+  font-weight: 500;
+  font-size: smaller;
 }
