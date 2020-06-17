@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeadersComponent } from '../@core/components/common/headers/headers.component';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @NgModule({
   declarations: [AppComponent, HeadersComponent],
@@ -21,7 +20,6 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     StatusBar,
     SplashScreen,
     InAppBrowser,
-    CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
