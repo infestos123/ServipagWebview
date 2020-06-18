@@ -21,7 +21,7 @@
           </ion-input>
         </div>
 
-        <div style="margin-bottom:1rem;margin-top: 2rem;">
+        <div style="margin-bottom:1rem;margin-top: 1rem;">
           <ion-input required type="password" class="input-formulario" [(ngModel)]="password" placeholder="Contraseña">
           </ion-input>
         </div>
@@ -32,20 +32,20 @@
         </div>
 
         <div>
-          <ion-label class="labelRecuperarRight label-link">Recuperar contraseña</ion-label>
+          <ion-label class="labelRecuperarRight">Recuperar contraseña</ion-label>
         </div>
 
         <div>
-          <ion-button expand="block" color="secondary" (click)="signIn()">Ingresar</ion-button>
+          <ion-button expand="block" class="btnColor" (click)="signIn()">Ingresar</ion-button>
         </div>
 
 
         <div>
-          <ion-label class="labelRecuperarRight2 label-link">Registrate aqui</ion-label>
+          <ion-label class="labelRecuperarRight2">Registrate aqui</ion-label>
         </div>
 
         <div>
-          <ion-button expand="block" fill="outline" color="secondary" class="btnPago" (click)="openUrlServipag()">Pago Rapido 1-2-3</ion-button>
+          <ion-button expand="block" fill="outline" class="btnPago btnColor" (click)="openUrlServipag()">Pago Rapido 1-2-3</ion-button>
         </div>
 
       </ion-col>
