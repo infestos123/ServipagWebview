@@ -1,8 +1,7 @@
-import { ILogin } from './../../../@core/models/login.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Plugins } from '@capacitor/core';
-import { Observable } from 'rxjs';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,7 @@ export class LoginPage implements OnInit {
   user: string;
   password: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
     this.setDataFields();
@@ -62,10 +61,24 @@ export class LoginPage implements OnInit {
           rut + '&PASSWORD=' + pass, windowName: '_blank'
       });
 
+    } else {
+      this.showAlert('¡Oops!', 'El usuario ingresado no existe.', ['OK']);
     }
   }
 
   openUrlServipag() {
     Plugins.Browser.open({ url: 'https://www.servipag.com/mobile', windowName: '_self' });
   }
+
+  async showAlert(header: string, message: string, buttons: string[]) {
+    const alert = await this.alertController.create({
+      cssClass: 'alert',
+      header,
+      message,
+      buttons
+    });
+
+    await alert.present();
+  }
+
 }
