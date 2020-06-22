@@ -1,53 +1,55 @@
 <ion-content>
   <div class="ion-page main-content" id="main-content">
-
+    <div class="iconPosition" (click)="showPassword()">
+      <ion-icon [name]="changeIcon" style="font-size: larger;"></ion-icon>
+    </div>
     <ion-row>
+      
       <ion-col size="10" offset="1">
 
-        <div class="label-titulo1">
+        <div class="label-titulo1" style="font-size:12px">
           <ion-label>
             Tus cuentas de siempre, como nunca antes.
           </ion-label>
         </div>
 
-        <div class="label-titulo2">
+        <div class="label-titulo2" style="font-size:11px">
           <ion-label>
             Utiliza tus datos ingresados en Servipag.com
           </ion-label>
         </div>
 
-        <div class="ion-align-self-center" style="margin-top: 2rem;">
-          <ion-input required type="text" class="input-formulario" [(ngModel)]="rut" (ionBlur)="rutFormat()"
-            pattern="^((\d{1,2}(\.\d{1,3}){2})|\d{7,8})(-[\dkK])$" placeholder="Ingrese su rut">
+        <div class="ion-align-self-center" style="margin-top: 1rem">
+          <ion-input required type="text" class="input-formulario" [(ngModel)]="rut" (ionChange)="rutFormat()" id="inputRut"
+            pattern="^((\d{1,2}(\.\d{1,3}){2})|\d{7,8})(-[\dkK])$" placeholder="Ingrese su rut" maxlength="12">
           </ion-input>
         </div>
 
         <div style="margin-bottom:1rem;margin-top: 1rem;">
-          <ion-input required type="password" class="input-formulario" [(ngModel)]="password" placeholder="Contraseña">
+          <ion-input required [type]="statePassword" id="password1" class="input-formulario" [(ngModel)]="password" placeholder="Contraseña">
           </ion-input>
         </div>
 
-        <div style="margin-left: 1.1rem;">
-          <ion-checkbox [(ngModel)]="recordPassword"></ion-checkbox>
-          <ion-label class="colorTittle" style="margin-left: 1rem;font-size:small; vertical-align: 50%;">Recordar
+        <div style="margin-left: 1rem;">
+          <ion-checkbox class="btnColor" [(ngModel)]="recordPassword"></ion-checkbox>
+          <ion-label class="colorTittle" style="margin-left: 0.5rem;font-size:small; vertical-align: 50%;">Recordar
             contraseña</ion-label>
         </div>
 
         <div>
-          <ion-label class="labelRecuperarRight">Recuperar contraseña</ion-label>
+          <ion-label (click)="openUrlServipag()" class="labelRecuperarRight">Recuperar contraseña</ion-label>
         </div>
 
         <div>
           <ion-button expand="block" class="btnColor" (click)="signIn()">Ingresar</ion-button>
         </div>
 
-
         <div>
-          <ion-label class="labelRecuperarRight2">Registrate aqui</ion-label>
+          <ion-label (click)="openUrlRegistro()" class="labelRecuperarRight2">Registrate aqui</ion-label>
         </div>
 
         <div>
-          <ion-button expand="block" fill="outline" class="btnPago btnColor" (click)="openUrlServipag()">Pago Rapido
+          <ion-button expand="block" fill="outline" class="btnPago btnColor" (click)="openUrlRapido()">Pago Rapido
             1-2-3</ion-button>
         </div>
 

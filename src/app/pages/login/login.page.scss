@@ -109,7 +109,7 @@
 }
 .label-titulo2 {
   text-align: center;
-  margin: 2rem 0 1rem 0;
+  margin: 1.5rem 0 0 0;
   color: #777a80;
   font-weight: 500;
   font-size: smaller;
@@ -117,4 +117,11 @@
 
 .btnColor {
   --ion-color-primary: #11c1e0;
+}
+
+.iconPosition {
+  position: absolute;
+  margin-left: 21.5rem;
+  margin-top: 12rem;
+  color: #11c1e0;
 }

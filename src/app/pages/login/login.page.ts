@@ -17,7 +17,9 @@ export class LoginPage implements OnInit {
 
   recordPassword = false;
   rut;
+  changeIcon = 'eye-off-outline';
   password: string;
+  statePassword = 'password';
 
   constructor(private router: Router, private alertController: AlertController) { }
 
@@ -28,7 +30,7 @@ export class LoginPage implements OnInit {
   async setDataToLocalStorage() {
     await Plugins.Storage.set({
       key: '1',
-      value: JSON.stringify({ rut: '145678900', password: '123456' })
+      value: JSON.stringify({ rut: '14.567.890-0', password: '123456' })
     });
   }
 
@@ -52,8 +54,7 @@ export class LoginPage implements OnInit {
   }
 
   signIn() {
-    if (this.rut === 'daniel' && this.password === '123' ||
-      this.rut === '145678900' && this.password === '123456') {
+    if (this.rut === '14.567.890-0' && this.password === '123456') {
       const rut = '145678900';
       const pass = '123456';
 
@@ -72,6 +73,14 @@ export class LoginPage implements OnInit {
   }
 
   openUrlServipag() {
+    Plugins.Browser.open({ url: 'https://ww3.servipag.com/pagoenlinea/portal/mobile/public/hidden/login', windowName: '_self' });
+  }
+
+  openUrlRegistro() {
+    Plugins.Browser.open({ url: 'https://ww5.servipag.com/pagoenlinea/portal/mobile/public/hidden/registro/', windowName: '_self' });
+  }
+
+  openUrlRapido() {
     Plugins.Browser.open({ url: 'https://www.servipag.com/mobile', windowName: '_self' });
   }
 
@@ -111,8 +120,21 @@ export class LoginPage implements OnInit {
     this.rut = rutLibrary.format(this.rut);
     const rutValido = rutLibrary.validate(this.rut);
 
-    // if (!rutValido) {
-    //   this.showAlert('¡Oops!', 'El rut ingresado no es válido.', ['OK']);
-    // }
+    if (!rutValido) {
+      document.getElementById('inputRut').style.color = 'red';
+    } else {
+      document.getElementById('inputRut').style.color = '#11c1e0';
+    }
   }
+
+  showPassword() {
+    if (this.statePassword === 'password'){
+      this.statePassword = 'text';
+      this.changeIcon = 'eye-outline';
+    }else{
+      this.statePassword = 'password';
+      this.changeIcon = 'eye-off-outline';
+    }
+  }
+
 }
