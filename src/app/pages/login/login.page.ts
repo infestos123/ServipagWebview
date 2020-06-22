@@ -111,8 +111,8 @@ export class LoginPage implements OnInit {
     this.rut = rutLibrary.format(this.rut);
     const rutValido = rutLibrary.validate(this.rut);
 
-    if (!rutValido) {
-      this.showAlert('¡Oops!', 'El rut ingresado no es válido.', ['OK']);
-    }
+    // if (!rutValido) {
+    //   this.showAlert('¡Oops!', 'El rut ingresado no es válido.', ['OK']);
+    // }
   }
 }
