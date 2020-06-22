@@ -122,7 +122,7 @@ export class LoginPage implements OnInit {
 
     if (!rutValido) {
       document.getElementById('inputRut').style.color = 'red';
-    } else {
+    }else{
       document.getElementById('inputRut').style.color = '#11c1e0';
     }
   }
