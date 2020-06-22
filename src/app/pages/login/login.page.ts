@@ -112,7 +112,9 @@ export class LoginPage implements OnInit {
     const rutValido = rutLibrary.validate(this.rut);
 
     if (!rutValido) {
-      this.showAlert('¡Oops!', 'El rut ingresado no es válido.', ['OK']);
+      document.getElementById('inputRut').style.color = 'red';
+    }else{
+      document.getElementById('inputRut').style.color = '#11c1e0';
     }
   }
 }

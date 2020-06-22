@@ -17,7 +17,7 @@
         </div>
 
         <div class="ion-align-self-center" style="margin-top: 2rem;">
-          <ion-input required type="text" class="input-formulario" [(ngModel)]="rut" (ionBlur)="rutFormat()"
+          <ion-input required type="text" class="input-formulario" [(ngModel)]="rut" (ionBlur)="rutFormat()" id="inputRut"
             pattern="^((\d{1,2}(\.\d{1,3}){2})|\d{7,8})(-[\dkK])$" placeholder="Ingrese su rut">
           </ion-input>
         </div>
