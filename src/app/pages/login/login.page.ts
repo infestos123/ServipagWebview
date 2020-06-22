@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Plugins } from '@capacitor/core';
 import { AlertController } from '@ionic/angular';
 
+import * as rutLibrary from 'rut.js';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -10,8 +12,11 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
+  private rutTest = /^((\d{1,2}(\.\d{1,3}){2})|\d{7,8})(-[\dkK])$/i;
+  private numeroTest = /^\d+$/i;
+
   recordPassword = false;
-  user: string;
+  rut;
   password: string;
 
   constructor(private router: Router, private alertController: AlertController) { }
@@ -36,10 +41,10 @@ export class LoginPage implements OnInit {
     this.getDataFromLocalStorage().then(data => {
 
       if (data === null) {
-        this.user = '';
+        this.rut = '';
         this.password = '';
       } else {
-        this.user = data.rut;
+        this.rut = data.rut;
         this.password = data.password;
         this.recordPassword = true;
       }
@@ -47,8 +52,8 @@ export class LoginPage implements OnInit {
   }
 
   signIn() {
-    if (this.user === 'daniel' && this.password === '123' ||
-      this.user === '145678900' && this.password === '123456') {
+    if (this.rut === 'daniel' && this.password === '123' ||
+      this.rut === '145678900' && this.password === '123456') {
       const rut = '145678900';
       const pass = '123456';
 
@@ -81,4 +86,33 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
+  /*   rutFormat() {
+      if (this.rut !== '') {
+        let tmpRut = this.rut;
+        let cont = 0;
+        tmpRut = tmpRut.replace('.', '');
+        tmpRut = tmpRut.replace('-', '');
+
+        let format = '-' + tmpRut.substring(tmpRut.length - 1);
+        for (let i = tmpRut.length - 2; i >= 0; i--) {
+          format = tmpRut.substring(i, i + 1) + format;
+          cont++;
+          if (cont === 3 && i !== 0) {
+            format = '.' + format;
+            cont = 0;
+          }
+        }
+        this.rut = format;
+        const state = this.rutTest.test(this.rut);
+      }
+    } */
+
+  rutFormat() {
+    this.rut = rutLibrary.format(this.rut);
+    const rutValido = rutLibrary.validate(this.rut);
+
+    if (!rutValido) {
+      this.showAlert('¡Oops!', 'El rut ingresado no es válido.', ['OK']);
+    }
+  }
 }
