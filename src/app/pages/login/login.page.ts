@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
   private rutTest = /^((\d{1,2}(\.\d{1,3}){2})|\d{7,8})(-[\dkK])$/i;
   private numeroTest = /^\d+$/i;
 
+  jskajskajskaj: any;
   recordPassword = false;
   rut;
   changeIcon = 'eye-off-outline';
